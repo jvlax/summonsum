@@ -1,0 +1,11 @@
+## Interface: 11303
+## Title: summonsum
+
+## Notes: announce soulshard count
+
+## Author: Katyparry @ Zandalar Tribe
+## Version: 0.0.1
+
+## SavedVariables:
+
+summonsum.lua
