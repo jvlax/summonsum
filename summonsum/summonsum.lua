@@ -17,7 +17,7 @@ end
 
 local function summonsum(self, event, arg1, arg2, arg3, arg4, ...)
   -- spirit tap test = 1454
-  if arg4 == 1454 then
+  if arg4 == 698 then
     local broadcastChannel = "PARTY";
     if IsInRaid("LE_PARTY_CATEGORY_HOME") then
       broadcastChannel = "RAID";
