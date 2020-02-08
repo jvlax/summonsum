@@ -53,6 +53,7 @@ local function summonsum(self, event, arg1, arg2, arg3, arg4, ...)
       if shards == 1 then
         shardGrammar = "soulshard"
       end
+      print("broadcast")
       SendChatMessage("Summoning " .. target .. " please click portal, " .. shards .. " " .. shardGrammar .. " remaining", broadcastChannel, nil, nil)
       lazyList[target] = (lazyList[target] or 0) + 1
     else
@@ -61,8 +62,8 @@ local function summonsum(self, event, arg1, arg2, arg3, arg4, ...)
   end
 end
 
-SLASH_KPSUM1 = "/sum"
-SlashCmdList["SUM"] = function(functionName)
+SLASH_KPSUM1 = "/kpsum"
+SlashCmdList["KPSUM"] = function(functionName)
   local command, arg1, arg2 = strsplit(" ", functionName, 3)
   if command == "report" then
     if (arg1) then
@@ -76,7 +77,7 @@ SlashCmdList["SUM"] = function(functionName)
           for k,v in spairs(lazyList, function(t,a,b) return t[b] < t[a] end) do
             SendChatMessage(n .. ". " .. k .. " summoned " .. v .. " times" , arg1, nil, arg2)
             n = n + 1
-            if n == 3 then
+            if n == 4 then
               return
             end
           end
@@ -87,7 +88,7 @@ SlashCmdList["SUM"] = function(functionName)
         for k,v in spairs(lazyList, function(t,a,b) return t[b] < t[a] end) do
           SendChatMessage(n .. ". " .. k .. " summoned " .. v .. " times" , arg1, nil, nil)
           n = n + 1
-          if n == 3 then
+          if n == 4 then
             return
           end
         end
