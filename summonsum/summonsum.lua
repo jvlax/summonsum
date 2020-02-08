@@ -42,7 +42,7 @@ local function summonsum(self, event, arg1, arg2, arg3, arg4, ...)
     end
   elseif event == "UNIT_SPELLCAST_SUCCEEDED" then
     -- spirit tap test = 1454
-    if arg3 == 698 then
+    if arg3 == 698 and arg1 == "player" then
       local broadcastChannel = "PARTY"
       if IsInRaid("LE_PARTY_CATEGORY_HOME") then
         broadcastChannel = "RAID"
@@ -61,8 +61,8 @@ local function summonsum(self, event, arg1, arg2, arg3, arg4, ...)
   end
 end
 
-SLASH_SUM1 = "/sum"
-SlashCmdList["SUM"] = function(functionName)
+SLASH_KPSUM1 = "/kpsum"
+SlashCmdList["KPSUM"] = function(functionName)
   local command, arg1, arg2 = strsplit(" ", functionName, 3)
   if command == "report" then
     if (arg1) then
