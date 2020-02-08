@@ -61,8 +61,8 @@ local function summonsum(self, event, arg1, arg2, arg3, arg4, ...)
   end
 end
 
-SLASH_KPSUM1 = "/kpsum"
-SlashCmdList["KPSUM"] = function(functionName)
+SLASH_KPSUM1 = "/sum"
+SlashCmdList["SUM"] = function(functionName)
   local command, arg1, arg2 = strsplit(" ", functionName, 3)
   if command == "report" then
     if (arg1) then
